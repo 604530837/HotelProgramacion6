@@ -77,7 +77,9 @@
   <ItemGroup>
     <Content Include="Administracion.aspx" />
     <Content Include="Clientes.aspx" />
+    <Content Include="contacto.aspx" />
     <Content Include="Inicio.aspx" />
+    <Content Include="Reservacion.aspx" />
     <Content Include="Styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -109,6 +111,13 @@
     <Compile Include="Models\Habitacion.cs" />
     <Compile Include="Models\Reserva.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservacion.aspx.cs">
+      <DependentUpon>Reservacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservacion.aspx.designer.cs">
+      <DependentUpon>Reservacion.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -123,6 +132,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Imagenes\" />
     <Folder Include="video\" />
   </ItemGroup>
   <PropertyGroup>

@@ -14,7 +14,7 @@ namespace HotelProgramacion6.Controllers
             SqlCommand command = new SqlCommand();
             Conexion conexion = new Conexion();
             command.Connection = conexion.conectar();
-            command.CommandText = "select * from Habitaciones where estado=true;";
+            command.CommandText = "select * from Habitaciones where estado=1;";
             command.CommandType = System.Data.CommandType.Text;
             SqlDataReader dr = command.ExecuteReader();
             List<Models.Habitacion> habitaciones = new List<Models.Habitacion>();
@@ -53,10 +53,10 @@ namespace HotelProgramacion6.Controllers
             SqlCommand command = new SqlCommand();
             Conexion conexion = new Conexion();
             command.Connection = conexion.conectar();
-            command.CommandText = "insert Habitaciones into(Descripcion,Precio,Estado) values(@descripcion,@precion,true);";
+            command.CommandText = "insert  into Habitaciones(Descripcion,Precio,Estado) values(@descripcion,@precio,1)";
             command.CommandType = System.Data.CommandType.Text;
-            command.Parameters.Add(new SqlParameter("Descripcion", habitacion.descripcion));
-            command.Parameters.Add(new SqlParameter("Precio", habitacion.precio));
+            command.Parameters.Add(new SqlParameter("descripcion", habitacion.descripcion));
+            command.Parameters.Add(new SqlParameter("precio", habitacion.precio));
             int rs = command.ExecuteNonQuery();
             conexion.conectar();
 
@@ -83,7 +83,7 @@ namespace HotelProgramacion6.Controllers
             SqlCommand command = new SqlCommand();
             Conexion conexion = new Conexion();
             command.Connection = conexion.conectar();
-            command.CommandText = "update Habitaciones set estado=false where habitacion=@id";
+            command.CommandText = "update Habitaciones set estado=0 where habitacion=@id";
             command.CommandType = System.Data.CommandType.Text;
             
             command.Parameters.Add(new SqlParameter("id", id));
